@@ -24,12 +24,12 @@ func createRandomEntry(t *testing.T, account Account) Entry {
 	return entry
 }
 
-func CreateEntryTest(t *testing.T) {
+func TestCreateEntry(t *testing.T) {
 	account := createRandomAccount(t)
 	createRandomEntry(t, account)
 }
 
-func GetEntryTest(t *testing.T) {
+func TestGetEntry(t *testing.T) {
 	account := createRandomAccount(t)
 	entry := createRandomEntry(t, account)
 
@@ -42,7 +42,7 @@ func GetEntryTest(t *testing.T) {
 	require.WithinDuration(t, e.CreatedAt, account.CreatedAt, time.Second)
 }
 
-func ListEntriesTest(t *testing.T) {
+func TestListEntries(t *testing.T) {
 	account := createRandomAccount(t)
 	for i := 0; i < 10; i++ {
 		createRandomEntry(t, account)
