@@ -38,7 +38,7 @@ func TestGetEntry(t *testing.T) {
 	require.NoError(t, err)
 
 	require.Equal(t, e.AccountID, entry.AccountID)
-	require.Equal(t, e.Amount, entry.AccountID)
+	require.Equal(t, e.Amount, entry.Amount)
 	require.WithinDuration(t, e.CreatedAt, account.CreatedAt, time.Second)
 }
 
